@@ -14,7 +14,7 @@ class CloudFunction extends Activity
     {
         return Cache::remember('taskvalve.auth', 3600, static function () {
             return Http::withToken(config('services.taskvalve.api_key'))
-                ->get('http://api.taskvalve.com/functions/v1/get-user')
+                ->get('https://api.taskvalve.com/functions/v1/get-user')
                 ->json();
         });
     }
