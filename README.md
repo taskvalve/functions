@@ -10,17 +10,16 @@ composer require taskvalve/functions
 
 ## Configuration
 
+config/services.php
+
 ```php
-    // config/services.php
-
-    'taskvalve' => [
-        'api_key' => env('TASKVALVE_API_KEY'),
-    ],
+'taskvalve' => [
+    'api_key' => env('TASKVALVE_API_KEY'),
+],
 ```
+.env
 
 ```
-#.env
-
 TASKVALVE_API_KEY=[YOUR_API KEY}
 ```
 
