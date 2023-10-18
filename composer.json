@@ -1,0 +1,43 @@
+{
+    "name": "taskvalve/functions",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TaskValve\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TaskValve",
+            "email": "support@taskvalve.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^8.13"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ]
+    },
+    "require": {
+        "laravel-workflow/laravel-workflow": "^1.0"
+    }
+}
